@@ -10,13 +10,14 @@ import org.pick.google.GoogleRetrive;
 import org.text.extractor.WikiRelationBuilder;
 
 public class Core {
-	public static void main(String[] args) {
-		String input = "american state";
+	
+	public void approachOne(){		
+		String input = "american states";
 		Set<String> print = new HashSet<String>();
 		try {
-			String URL = new GoogleRetrive().getRelatedConURL(input);
+			String URL = new GoogleRetrive().getRelatedConURL(input,"","wiki");
 			if (URL.contains("http://en.wikipedia.org/")) {
-				Collection<String> relations = new WikiRelationBuilder().getRelation(URL);
+				Collection<String> relations = new WikiRelationBuilder().getRelationap1(URL);
 				for (String relation : relations) {
 					if (Collections.frequency(relations, relation) > 1) {
 						print.add(relation);
@@ -35,5 +36,28 @@ public class Core {
 			e.printStackTrace();
 		}
 
+	}
+	
+	public static void approachTwo(){
+		String input = "america states";
+		try {
+			String URL = new GoogleRetrive().getRelatedConURL(input,"History","wiki");
+			if (URL.contains("http://en.wikipedia.org/")) {
+				Collection<String> relations = new WikiRelationBuilder().getRelationap2(URL);
+				for (String string : relations) {
+					System.out.println(string);
+				}
+				System.out.println(URL);
+			} else {
+				System.out.println("The result is not from wikipedia...");
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		approachTwo();
 	}
 }

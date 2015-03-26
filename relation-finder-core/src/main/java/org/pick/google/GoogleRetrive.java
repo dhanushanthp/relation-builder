@@ -3,18 +3,14 @@ package org.pick.google;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.util.List;
-
 import com.google.gson.Gson;
 
 public class GoogleRetrive {
-	public String getRelatedConURL(String qeury) throws IOException {
+	public String getRelatedConURL(String qeury,String discipline,String domain) throws IOException {
 		String google = "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&num=20&q=";
-		String search = qeury;
+		String search = qeury + " + " + discipline + " + " + domain ;
 		String charset = "UTF-8";
 
 		URL url = new URL(google + URLEncoder.encode(search, charset));
