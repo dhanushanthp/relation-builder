@@ -1,4 +1,4 @@
-package org.pick.google;
+package org.pearson.google;
 
 import java.io.IOException;
 import java.io.InputStreamReader;

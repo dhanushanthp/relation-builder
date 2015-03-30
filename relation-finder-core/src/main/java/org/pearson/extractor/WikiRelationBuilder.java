@@ -1,4 +1,4 @@
-package org.text.extractor;
+package org.pearson.extractor;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.pearson.domain.Domain;
-import org.pick.google.GoogleRetrive;
+import org.pearson.google.GoogleRetrive;
 
 public class WikiRelationBuilder {
 	public Domain getRelations(String input, String decipline) throws IOException {

@@ -1,8 +1,9 @@
-package org.core.main;
+package org.pearson.main;
 
 import java.io.IOException;
+
 import org.pearson.domain.Domain;
-import org.text.extractor.WikiRelationBuilder;
+import org.pearson.extractor.WikiRelationBuilder;
 
 public class Core {
 

@@ -1,4 +1,4 @@
-package org.pick.google;
+package org.pearson.google;
 import java.util.List;
 
 public class GoogleResults {
